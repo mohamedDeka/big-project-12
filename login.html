@@ -1,0 +1,308 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>about</title>
+<link href="normalize.css" rel="stylesheet">
+<!--render all elements normally-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--fontawesome library-->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">            
+<link rel="stylesheet" href="style4.css">
+
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="home.html" class="logo"> <i class="fas fa-store"></i> shopie </a>
+
+    <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div id="search-btn" class="fas fa-search"></div>
+        <a href="login.html" class="fas fa-user"></a>
+        <a href="#" class="fas fa-heart" id="heart-btn"></a>
+        <div class="fa-solid fa-address-card" id="login-btn"></div>
+        <div id="cart-btn" class="fas fa-shopping-cart"></div>
+    </div>
+    <div class="cart-items-container">
+        <div class="cart-items">
+            <span class="fas fa-times"></span>
+            <img src="images/cart-item-1.png" alt="">
+            <div class="content">
+                <h3>cart item 01</h3>
+                <div class="price">$15.99/-</div>
+            </div>
+        </div>
+        <div class="cart-items">
+            <span class="fas fa-times"></span>
+            <img src="images/cart-item-2.png" alt="">
+            <div class="content">
+                <h3>cart item 01</h3>
+                <div class="price">$15.99/-</div>
+            </div>
+        </div>
+        <div class="cart-items">
+            <span class="fas fa-times"></span>
+            <img src="images/cart-item-3.png" alt="">
+            <div class="content">
+                <h3>cart item 01</h3>
+                <div class="price">$15.99/-</div>
+            </div>
+        </div>
+        <div class="cart-items">
+            <span class="fas fa-times"></span>
+            <img src="images/cart-item-4.png" alt="">
+            <div class="content">
+                <h3>cart item 01</h3>
+                <div class="price">$15.99/-</div>
+            </div>
+        </div>
+        <a href="#" class="btn">checkout now</a>
+    </div>
+</header>
+<!-- header section ends -->
+<div class="login-form-container">
+
+    <i class="fas fa-times"id="form-close"></i>
+
+    <form action="" onsubmit = "validate()" id="loginForm">
+        <p id="error"></p>>
+        <h3>login</h3>
+        <div class="part">
+        <input type="email" class="box" placeholder="enter your email" id="email">
+        <i class="fa fa-times u_times"></i>
+        <i class="fa fa-check u_check"></i>
+        </div>
+        <div class="part">
+        <input type="password" class="box" placeholder="enter your password" id="pass">
+        <i class="fa fa-times p_times"></i>
+        <i class="fa fa-check p_check"></i>
+       </div>
+        <input type="submit" value="login now" class="btn">
+        <input type="checkbox" name="" id="remember">
+        <label for="remember">remember me</label>
+        <p>forget password <a href="#">click here</a></p>
+        <p>do not have an account<a href="javascript:void(0)" id="registerBtn">register now</a></p> <!-- NEW ADDITION  -->
+    </form>
+    <form method="post" action="" id="registerForm" class="form">
+        <h1 class="form-title">sign up</h1>
+        <div class="input-box">
+            <div class="col">
+                <i class="fas fa-user"></i>
+                <input type="text" name="fn" placeholder="first-name" class="input" id="r-fname">
+            </div>
+            <div class="col">
+                <i class="fas fa-user"></i>
+                <input type="text" name="ln" id="r-lname" placeholder="Last Name" class="input" />
+              </div>
+        </div>
+        <div class="alert" id="nameError">
+          <i class="fas fa-exclamation-circle"></i>
+          <div class="errTxt">Required</div>
+        </div>
+        <div class="input-box">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" id="mail" placeholder="email" class="input" />
+        </div>
+        <div class="alert" id="emailError">
+          <i class="fas fa-exclamation-circle"></i>
+          <div class="errTxt">Required</div>
+        </div>
+        <div class="input-box">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="psw1" id="r-password" placeholder="Password" class="input" />
+            <i class="fas fa-eye-slash show-password" id="showpassword"></i>
+          </div>
+          <div class="alert" id="pError">
+            <i class="fas fa-exclamation-circle"></i>
+            <div class="errTxt">Required</div>
+          </div>
+          <div class="input-box">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="psw2" id="r-confirmPassword" placeholder="Confirm Password" class="input" disabled="disabled" />
+          </div>
+          <div class="alert" id="cpError">
+            <i class="fas fa-exclamation-circle"></i>
+            <div class="errTxt">Password don't match</div>
+          </div>
+            <input type="checkbox" class="check-box" id="check-box" required><span class="check">I Agree to the Terms & Conditions</span> 
+            <div class="input-box">
+                <button type="submit" class="btn" id="submitbtn" name="register">sign up</button>
+            </div>
+      <div class="social-section">
+        <div class="social-icons">
+          <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="google"><i class="fab fa-google"></i></a>
+        </div>
+    </div>
+    <a href="javascript:void(0);" id="loginBtn" class="btn">go back to login page</a> <!-- NEW ADDITION  -->
+    </form>
+</div> 
+<!-- side-bar section starts -->
+<div class="side-bar">
+
+    <div id="close-side-bar" class="fas fa-times"></div>
+
+    <div class="user">
+        <img src="images/user-img.png" alt="">
+        <h3>shaikh anas</h3>
+        <a href="#">log out</a>
+    </div>
+    <nav class="navbar">
+        <a href="home.html"> <i class="fas fa-angle-right"></i> home </a>
+        <a href="about.html"> <i class="fas fa-angle-right"></i> about </a>
+        <a href="products.html"> <i class="fas fa-angle-right"></i> products </a>
+        <a href="contact.html"> <i class="fas fa-angle-right"></i> contact </a>
+        <a href="login.html"> <i class="fas fa-angle-right"></i> login </a>
+        <a href="register.html"> <i class="fas fa-angle-right"></i> register </a>
+        <a href="cart.html"> <i class="fas fa-angle-right"></i> cart </a>
+    </nav>
+</div>
+<!-- side-bar section ends -->
+
+
+<!--login form section start-->
+<section class="login">
+    <form action="">
+        <h3>login now</h3>
+        <input type="email" class="box" name="" id="" placeholder="enter your email">
+        <input type="password" class="box" name="" id="" placeholder="enter your password">
+        <div class="remember">
+            <input type="checkbox" name="" id="remember-me">
+            <label for="remember-me">remeber me</label>
+        </div>
+        <input type="submit" value="login now" class="btn">
+        <p>do not have an account? </p>
+        <a href="register.html" class="btn link">register now</a>
+        <a href="#" class="btn">forget password</a>
+    </form>
+</section>
+<!--lRform-->
+<section id="lrform">   
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Login</span>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Enter your password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">Remember me</label>
+                        </div>
+                        
+                        <a href="#" class="text">Forgot password?</a>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="button" value="Login Now">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Not a member?
+                        <a href="#" class="text signup-link" >Signup now</a>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="form signup">
+                <span class="title">Registration</span>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your name" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Create a password" required>
+                        <i class="uil uil-lock icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Confirm a password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="sigCheck">
+                            <label for="sigCheck" class="text">Remember me</label>
+                        </div>
+                        
+                        <a href="#" class="text">Forgot password?</a>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="button" value="Login Now">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Not a member?
+                        <a href="#" class="text login-link">Signup now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+<!-- footer section starts  -->
+<section class="quick-links">
+    <a href="home.html" class="logo"> <i class="fas fa-store"></i> shopie </a>
+    <div class="links">
+        <a href="home.html"> home </a>
+        <a href="about.html"> about </a>
+        <a href="products.html"> products </a>
+        <a href="contact.html"> contact </a>
+        <a href="login.html"> login </a>
+        <a href="register.html"> register </a>
+        <a href="cart.html"> cart </a>
+    </div>
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
+</section>
+
+<section class="credit">
+    <p> created by <span>mr. web designer</span> | all rights reserved! </p>
+    <img src="images/card_img.png" alt="">
+</section>
+<!-- footer section ends -->
+<!-- footer section ends -->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
