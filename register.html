@@ -19,7 +19,7 @@
 
 <header class="header">
 
-    <a href="home.html" class="logo"> <i class="fas fa-store"></i> shopie </a>
+    <a href="index.html" class="logo"> <i class="fas fa-store"></i> shopie </a>
 
     <form action="" class="search-form">
         <input type="search" id="search-box" placeholder="search here...">
@@ -91,7 +91,7 @@
         <input type="submit" value="login now" class="btn">
         <input type="checkbox" name="" id="remember">
         <label for="remember">remember me</label>
-        <p>forget password <a href="#">click here</a></p>
+        <p>forget password <a href="#" id="resetBtn">click here</a></p>
         <p>do not have an account<a href="javascript:void(0)" id="registerBtn">register now</a></p> <!-- NEW ADDITION  -->
     </form>
     <form method="post" action="" id="registerForm" class="form">
@@ -147,6 +147,17 @@
         </div>
     </div>
     <a href="javascript:void(0);" id="loginBtn" class="btn">go back to login page</a> <!-- NEW ADDITION  -->
+    </form>
+    <!-- added NEW 🔥 -->
+    <form action="" id="resetform">
+        <h3>reset password</h3>
+        <div class="part">
+        <input type="email" class="box" placeholder="enter your email" id="email">
+        </div>
+        <div class="part">
+            <input type="password" class="box" placeholder="enter your new password" id="password">
+        </div>
+        <input type="submit" value="update" class="btn">
     </form>
 </div> 
 <!-- side-bar section starts -->

@@ -22,7 +22,7 @@
 
 <header class="header">
 
-    <a href="home.html" class="logo"> <i class="fas fa-store"></i> shopie </a>
+    <a href="index.html" class="logo"> <i class="fas fa-store"></i> shopie </a>
 
     <form action="" class="search-form">
         <input type="search" id="search-box" placeholder="search here...">
@@ -94,7 +94,7 @@
         <input type="submit" value="login now" class="btn">
         <input type="checkbox" name="" id="remember">
         <label for="remember">remember me</label>
-        <p>forget password <a href="#">click here</a></p>
+        <p>forget password <a href="#" id="resetBtn">click here</a></p>
         <p>do not have an account<a href="javascript:void(0)" id="registerBtn">register now</a></p> <!-- NEW ADDITION  -->
     </form>
     <form method="post" action="" id="registerForm" class="form">
@@ -150,6 +150,17 @@
         </div>
     </div>
     <a href="javascript:void(0);" id="loginBtn" class="btn">go back to login page</a> <!-- NEW ADDITION  -->
+    </form>
+    <!-- added NEW 🔥 -->
+    <form action="" id="resetform">
+        <h3>reset password</h3>
+        <div class="part">
+        <input type="email" class="box" placeholder="enter your email" id="email">
+        </div>
+        <div class="part">
+            <input type="password" class="box" placeholder="enter your new password" id="password">
+        </div>
+        <input type="submit" value="update" class="btn">
     </form>
 </div> 
 <!-- side-bar section starts -->
@@ -225,7 +236,7 @@
 
                 <div class="login-signup">
                     <span class="text">Not a member?
-                        <a href="#" class="text signup-link" >Signup now</a>
+                        <a href="javascript:void(0)" class="text signup-link" >Signup now</a>
                     </span>
                 </div>
             </div>
@@ -269,7 +280,7 @@
 
                 <div class="login-signup">
                     <span class="text">Not a member?
-                        <a href="#" class="text login-link">Signup now</a>
+                        <a href="javascript:void(0)" class="text login-link">Signup now</a>
                     </span>
                 </div>
             </div>
@@ -304,5 +315,40 @@
 <!-- footer section ends -->
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="main.js"></script>
+<script>
+        const container = document.querySelector(".container"),
+        pwShowHide = document.querySelectorAll(".showHidePw"),
+        pwFields = document.querySelectorAll(".password"),
+        signUp = document.querySelector(".signup-link"),
+        loGin = document.querySelector(".login-link");
+  
+      //   js code to show/hide password and change icon //
+      pwShowHide.forEach(eyeIcon =>{
+          eyeIcon.addEventListener("click", ()=>{
+              pwFields.forEach(pwField =>{
+                  if(pwField.type ==="password"){
+                      pwField.type = "text";
+  
+                      pwShowHide.forEach(icon =>{
+                          icon.classList.replace("uil-eye-slash", "uil-eye");
+                      })
+                  }else{
+                      pwField.type = "password";
+  
+                      pwShowHide.forEach(icon =>{
+                          icon.classList.replace("uil-eye", "uil-eye-slash");
+                      })
+                  }
+              }) 
+          })
+      })
+          // js code to appear signup and login form //
+          signUp.addEventListener("click", ( )=>{
+          container.classList.add("active");
+      });
+      loGin.addEventListener("click", ( )=>{
+          container.classList.remove("active");
+      });
+</script>
 </body>
 </html>

@@ -82,37 +82,7 @@ document.querySelector("#cart-btn").onclick = () => {
 };
 
 
-// The End Of The Year Date To Countdown To
-// 1000 milliseconds = 1 Second
 
-let countDownDate = new Date("Dec 31, 2022 23:59:59").getTime();
-// console.log(countDownDate);
-
-let counter = setInterval(() => {
-  // Get Date Now
-  let dateNow = new Date().getTime();
-
-  // Find The Date Difference Between Now And Countdown Date
-  let dateDiff = countDownDate - dateNow;
-
-  // Get Time Units
-  // let days = Math.floor(dateDiff / 1000 / 60 / 60 / 24);
-  let days = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
-
-  document.querySelector(".days").innerHTML = days < 10 ? `0${days}` : days;
-  document.querySelector(".hours").innerHTML = hours < 10 ? `0${hours}` : hours;
-  document.querySelector(".minutes").innerHTML =
-    minutes < 10 ? `0${minutes}` : minutes;
-  document.querySelector(".seconds").innerHTML =
-    seconds < 10 ? `0${seconds}` : seconds;
-
-  if (dateDiff < 0) {
-    clearInterval(counter);
-  }
-}, 1000);
 
 
 
@@ -185,7 +155,6 @@ formbtn.addEventListener("click", () => {
   loginform.classList.add("active");
   document.getElementById("loginForm").classList.add("active"); ///////////// Added New
   CartItem.classList.remove("active");
-  SearchForm.classList.remove("active");
 });
 
 let registerBtn = document.querySelector("#registerBtn"); ///////////// Added New
@@ -204,10 +173,13 @@ loginBtn.onclick = () => { ///////////// Added New
 
 formclose.addEventListener("click", () => {
   loginform.classList.remove("active"); //law l8tha w geet adoos 3la label al x msh hy5rog //
+  document.querySelector("#resetform").classList.remove("active");
+  document.querySelector("#loginForm").classList.remove("active");
+  document.querySelector("#registerForm").classList.remove("active");
 });
 let registerform = document.querySelector("#registerform");
 let password = registerform.querySelector("#r-password");
-    confirmpassword = registerform.querySelector("#r-confirmPassword");
+    let confirmpassword = registerform.querySelector("#r-confirmPassword");
     password.addEventListener("input", (e) =>{
      if(password.value.trim().length >= 8){
       confirmpassword.removeAttribute("disabled")
@@ -275,46 +247,14 @@ let password = registerform.querySelector("#r-password");
           };
         });
     
-/*
-        const container = document.querySelector(".container"),
-        pwShowHide = document.querySelectorAll(".showHidePw"),
-        pwFields = document.querySelectorAll(".password"),
-        signUp = document.querySelector(".signup-link"),
-        login = document.querySelector(".login-link");
-  
-      //   js code to show/hide password and change icon //
-      pwShowHide.forEach(eyeIcon =>{
-          eyeIcon.addEventListener("click", ()=>{
-              pwFields.forEach(pwField =>{
-                  if(pwField.type ==="password"){
-                      pwField.type = "text";
-  
-                      pwShowHide.forEach(icon =>{
-                          icon.classList.replace("uil-eye-slash", "uil-eye");
-                      })
-                  }else{
-                      pwField.type = "password";
-  
-                      pwShowHide.forEach(icon =>{
-                          icon.classList.replace("uil-eye", "uil-eye-slash");
-                      })
-                  }
-              }) 
-          })
-      })
-  
-      // js code to appear signup and login form //
-      signUp.addEventListener("click", ( )=>{
-          container.classList.add("active");
-      });
-      login.addEventListener("click", ( )=>{
-          container.classList.remove("active");
-      });
-      */
 
-let resetBtn = document.querySelector("#resetBtn");
-resetBtn.onclick = () => { 
-  document.querySelector("#resetform").classList.add("active"); ///////////// Added New
-  document.querySelector("#loginForm").classList.remove("active"); ///////////// Added New
-  document.querySelector("#registerForm").classList.reomve("active"); ///////////// Added New
-};
+
+  
+
+  let resetBtn = document.querySelector("#resetBtn");
+  resetBtn.onclick = () => {
+      document.querySelector("#resetform").classList.add("active"); ///////////// Added New
+      document.querySelector("#loginForm").classList.remove("active"); ///////////// Added New
+      document.querySelector("#registerForm").classList.remove("active"); ///////////// Added New
+  };
+
